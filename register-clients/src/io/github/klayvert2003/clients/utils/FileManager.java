@@ -8,7 +8,8 @@ import java.nio.file.Paths;
 public class FileManager {
     public static void persistFile(String nome, byte[] bytes) {
         try {
-            Path path = Paths.get(System.getProperty("user.dir") + nome);
+            String projectPath = System.getProperty("user.dir") + "/";
+            Path path = Paths.get(projectPath + nome);
             Files.write(path, bytes);
         } catch (IOException e) {
             System.out.println("Error occurred: " + e.getMessage());
