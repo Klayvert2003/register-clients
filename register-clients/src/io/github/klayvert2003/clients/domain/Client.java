@@ -8,6 +8,7 @@ import java.util.UUID;
 public class Client {
     private UUID id;
     private String name;
+    private Integer age;
     private String cpf;
     private TypeGender gender;
     private byte[] photo;
@@ -18,6 +19,14 @@ public class Client {
 
     public UUID getId() {
         return id;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public void setId(UUID id) {
@@ -61,6 +70,7 @@ public class Client {
         return "Client{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", gender=" + gender +
                 ", photo=" + Arrays.toString(photo) +

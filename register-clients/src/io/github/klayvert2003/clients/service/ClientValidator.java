@@ -21,5 +21,9 @@ public class ClientValidator {
         if (client.getCpf().length() != 11) {
             throw new InvalidCpfException("CPF do cliente é Inválido!");
         }
+
+        if (client.getAge() <= 0) {
+            throw new ObrigatoryDataException("Idade do cliente é Inválida!");
+        }
     }
 }
