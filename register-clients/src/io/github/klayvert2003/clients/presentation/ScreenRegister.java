@@ -123,7 +123,13 @@ public class ScreenRegister extends JFrame {
             client.setName(fieldName.getText());
             client.setCpf(fieldCpf.getText());
             client.setGender( (TypeGender) fieldGender.getSelectedItem());
-            client.setAge(Integer.valueOf(fieldAge.getText()));
+
+            try {
+                client.setAge(Integer.valueOf(fieldAge.getText()));
+            } catch (NumberFormatException ignored) {
+                JOptionPane.showMessageDialog(null, "Digite uma idade válida!");
+            }
+
             byte[] photoBytes = ConvertIconToBytesArray.convert(labelPhoto.getIcon());
             client.setPhoto(photoBytes);
 
